@@ -4,6 +4,14 @@
         RewriteEngine On
         #RewriteBase /
 
+        # Redirection http vers https
+        RewriteCond %{SERVER_PORT} 80
+        RewriteRule ^(.*)$ https://www.onpariequoi.fr/$1 [R,L]
+
+        # Redirection onpariequoi.fr vers www.onpariequoi.fr
+        Rewritecond %{HTTP_HOST} ^exemple.com$
+        Rewriterule ^(.*) http://www.onpariequoi.com/$1 [QSA,L,R=301]
+
         # Redirect Trailing Slashes If Not A Folder...
         #RewriteCond %{REQUEST_FILENAME} !-d
         #RewriteRule ^(.*)/$ /$1 [L,R=301]
