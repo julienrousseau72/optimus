@@ -72,10 +72,10 @@
 
     </head>
     <body>
-        @include('layouts.header')
+        @include('common.header')
         <div id="main">
             @yield('content')
         </div>
-        @include('layouts/footer')
+        @include('common/footer')
     </body>
 </html>
