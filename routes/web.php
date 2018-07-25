@@ -13,4 +13,8 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+// Page d'accueil
+Route::get('/', 'AppController@accueil')->name('accueil');
+
+// Mon compte
+Route::get('/mon-compte', 'AccountController@account')->name('mon-compte');
